@@ -1,0 +1,43 @@
+{
+  "name": "hotel-offer-orchestrator",
+  "version": "1.0.0",
+  "description": "A hotel offer aggregation service that compares supplier prices, deduplicates hotels, and filters results using Temporal and Redis.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx src/server.ts",
+    "worker": "tsx src/worker.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "start:worker": "node dist/worker.js",
+    "infra:up": "docker compose up -d",
+    "infra:down": "docker compose down -v"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ranjan-praveen/hotel-offer-orchestrator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ranjan-praveen/hotel-offer-orchestrator/issues"
+  },
+  "homepage": "https://github.com/ranjan-praveen/hotel-offer-orchestrator#readme",
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.6.3",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "@temporalio/activity": "^1.24.0",
+    "@temporalio/client": "^1.24.0",
+    "@temporalio/worker": "^1.24.0",
+    "@temporalio/workflow": "^1.24.0",
+    "axios": "^1.20.0",
+    "express": "^5.2.1",
+    "ioredis": "^6.0.0",
+    "redis": "^6.2.1"
+  }
+}
