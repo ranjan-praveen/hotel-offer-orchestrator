@@ -122,6 +122,21 @@ Worker state changed ... RUNNING
 
 Keep this terminal running.
 
+### ⏱️ Temporal Namespace
+
+The application uses the Temporal `default` namespace.
+
+The namespace is created automatically during infrastructure setup by the Temporal initialization script, so no manual namespace creation is required.
+
+You can verify it with:
+
+```powershell
+docker run --rm --network hotel-offer-orchestrator_default `
+  temporalio/admin-tools:1.31.0 `
+  temporal operator namespace list `
+  --address hotel-temporal:7233
+```
+
 ---
 
 ## 3. Start the API
